@@ -1,0 +1,128 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body{
+    /* background: #f0f0f0; */
+    font-family: Arial, Helvetica, sans-serif;
+}
+.header{
+    height: 70px;
+    width: 100%;
+    display: flex;
+    position: sticky;
+    background: #f9f9f9;
+    box-shadow: 0 0 15px #0000002c;
+    padding: 0 40px;
+    align-items: center;
+}
+.header .logos{
+    display: flex;
+    height: 100%;
+}
+.header img{
+    width: auto;
+    height: 100%;
+}
+.header .fci,.header .su{
+    padding: 5px;
+    margin: 0 10px;
+}
+.header .base-line{
+    margin: 10px 10px;
+    height: 70%;
+    width: 2px;
+    background: #35353596;
+}
+
+/* Start body */
+.body{
+    padding: 50px;
+    font-size: 40px;
+    font-weight: bold;
+}
+.body .text-container{
+    opacity: 0.4;
+}
+.body .container{
+    position: relative;
+}
+.body Gm_textarea__{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: none;
+    font-size: 40px;
+    font-weight: bold;
+    font-family: inherit;
+    border: none;
+    resize: none;
+    outline: none;
+}
+/* .body Gm_textarea__ .text-area{
+    color: #001f22;
+    color: #FF5722;
+    color: #057f8f;
+} */
+
+.popup{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 9;
+    width: 100%;
+    height: 100%;
+    background: #0000008e;
+}
+.popup .window{
+    background: #fff;
+    width: 50%;
+    height: 50%;
+    border-radius: 20px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 20px 40px;
+}
+.popup .window .icon{
+    height: 80px;
+    text-align: center;
+    border-bottom: 2px solid #0000004f;
+    margin: 0 0 20px;
+    padding: 10px 0;
+}
+.popup .window .icon svg{
+    height: 100%;
+}
+.popup .window .numbers{
+    
+}
+.popup .window .numbers .process-container{
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.popup .window .numbers .process-container .process{
+    width: 70%;
+    height: 15px;
+    background: #ccc;
+    border-radius: 50px;
+    overflow: hidden;
+    margin: 0 20px 0 0;
+}
+.popup .window .numbers .process-container .process>div{
+    background: linear-gradient(to right,#b90fe4,#0888bb);
+    height: 100%;
+    border-radius: 50px;
+}
+.popup .window .numbers .process-container h1{
+    text-wrap: nowrap;
+    font-size: 22px;
+}
+.popup .window .numbers .span{
+    font-size: 22px;
+    font-weight: 700;
+}
