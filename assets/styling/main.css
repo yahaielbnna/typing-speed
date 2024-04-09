@@ -35,6 +35,9 @@ body{
     width: 2px;
     background: #35353596;
 }
+.header h1{
+    font-size: 1.5rem;
+}
 
 /* Start body */
 .body{
@@ -89,10 +92,14 @@ body{
 }
 .popup .window .icon{
     height: 80px;
-    text-align: center;
     border-bottom: 2px solid #0000004f;
     margin: 0 0 20px;
     padding: 10px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #02506e;
+    text-transform: uppercase;
 }
 .popup .window .icon svg{
     height: 100%;
@@ -123,7 +130,14 @@ body{
     text-wrap: nowrap;
     font-size: 22px;
 }
-.popup .window .numbers span{
-    font-size: 20px;
-    margin: 5px 0;
+.popup .window .numbers .row{
+    display: flex;
+    margin: 10px 0;
+    font-size: 1.2rem;
+    text-transform: uppercase;
 }
+.popup .window .numbers .row h4{
+    width: 150px;
+    color: #b90fe4;
+}
+/* font-size: 20px;
