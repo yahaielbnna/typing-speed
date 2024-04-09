@@ -4,12 +4,7 @@ let text = document.querySelector('.text-container').innerText,
     text_area_value = '',
     first_time, last_time, timer, net_wpm, gross_wpm, i = 0, score = 0, wrong = 0;
 
-// window.onclick = _ => {
-//     text_area.focus();
-// }
-
 window.addEventListener('keypress', e => {
-    // console.log(e);
     if (text_area_value == "") {
         let time = new Date()
         first_time = time.getTime();
@@ -18,7 +13,6 @@ window.addEventListener('keypress', e => {
         i++;
         score++;
         text_area_value += e.key;
-        // console.log(text_area_value);
         if (e.key == ' ') {
             gm(text_area).child('.text-area font').padding('0px 15px 0px 0px')
         } else {
@@ -26,7 +20,6 @@ window.addEventListener('keypress', e => {
         }
         gm(text_area).child('.text-area font').text(text_area_value)
         if (text_area_value == text) {
-            // console.log('done');
             let time__ = new Date();
             last_time = time__.getTime();
 
@@ -36,12 +29,6 @@ window.addEventListener('keypress', e => {
             net_wpm = Math.floor(net_wpm);
             gross_wpm = Math.floor(gross_wpm);
             result__();
-
-            // console.log(i);
-            // console.log(first_time);
-            // console.log(last_time);
-            // Math.floor(diff / 1000 % 60)
-            // console.log(Math.floor((last_time - first_time) / 1000 % 60));
         }
     } else {
         if (text_area_value !== text) {
@@ -87,7 +74,7 @@ function result__() {
         .text(`typing time`)
         .parent()
         .insert('span')
-        .text(`${timer}s`)
+        .text(`${timer} s`)
         .parent(2)
         .insert('div')
         .addClass('row')
@@ -105,32 +92,3 @@ function result__() {
         .insert('span')
         .text(`${gross_wpm}`)
 }
-// window.onkeyup = e => {
-
-// }
-
-// gm(text_area).event('keyup', e => {
-//     if (text_area_value == "") {
-//         // i = 0;
-//         let time = new Date()
-//         first_time = time.getTime();
-//     }
-//     text_area_value = text_area.value;
-
-//     if (splited_[i] == e.key) {
-//         // console.log(e.key);
-//         // i += 1;
-//     } else {
-//         text_area.value = text_area_value.slice(0, -1)
-//         // console.log(i);
-//         // console.log(splited_[i]);
-//         // console.log(e.key);
-//         // e.preventDefault();
-//         // return false;
-//     }
-//     // Backspace
-//     let text_area_value__splited = text_area.value.split('');
-//     i = text_area_value__splited.length;
-//     console.log(text_area_value__splited);
-//     console.log(text_area_value__splited.length);
-// });
