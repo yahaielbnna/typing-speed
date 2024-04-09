@@ -86,13 +86,14 @@ body{
 .popup .window{
     background: #fff;
     width: 50%;
-    height: 50%;
+    height: fit-content;
+    min-height: 50%;
     border-radius: 20px;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    padding: 20px 40px;
+    padding: 20px 40px 10px;
 }
 .popup .window .icon{
     height: 80px;
@@ -117,6 +118,7 @@ body{
 .popup .window .numbers .process-container{
     display: flex;
     align-items: center;
+    justify-content: center;
     margin: 10px 0;
 }
 .popup .window .numbers .process-container .process{
@@ -146,6 +148,32 @@ body{
     width: 150px;
     color: #b90fe4;
 }
+
+.popup .window .retry{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid #0000004f;
+    margin: 10px 0;
+    padding: 15px 0 0 0;
+}
+.popup .window .retry button{
+    background: #0888bb;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1rem;
+    color: #f9f9f9;
+    outline: none;
+    cursor: pointer;
+    opacity: 0.8;
+    transition: 0.3s;
+}
+.popup .window .retry button:hover{
+    box-shadow: 0 0 10px #0888bb79;
+    opacity: 1;
+}
+
 .footer {
   text-align: center;
   margin-top: auto;

@@ -79,16 +79,30 @@ function result__() {
         .insert('div')
         .addClass('row')
         .insert('h4')
+        .text(`Gross WPM`)
+        .parent()
+        .insert('span')
+        .text(`${gross_wpm}`)
+        .parent(2)
+        .insert('div')
+        .addClass('row')
+        .insert('h4')
         .text(`Net WPM`)
         .parent()
         .insert('span')
         .text(`${net_wpm}`)
         .parent(2)
         .insert('div')
-        .addClass('row')
-        .insert('h4')
-        .text(`Gross WPM`)
-        .parent()
-        .insert('span')
-        .text(`${gross_wpm}`)
-}
+        .addClass('retry')
+        .insert('button')
+        .text('Retry')
+        .event('click', e => {
+            gm(e.target).parent(5).remove();
+            text_area_value = '';
+            gm(text_area).child('.text-area font').text(text_area_value)
+            i = 0
+            score = 0
+            wrong = 0
+            gm('.score-number').text(score);
+        })
+}       
