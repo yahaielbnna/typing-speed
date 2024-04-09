@@ -2,7 +2,7 @@ let text = document.querySelector('.text-container').innerText,
     splited_ = text.split(''),
     text_area = document.querySelector('Gm_textarea__'),
     text_area_value = '',
-    first_time, last_time, timer, i = 0, score = 0;
+    first_time, last_time, timer, net_wpm, gross_wpm, i = 0, score = 0, wrong = 0;
 
 // window.onclick = _ => {
 //     text_area.focus();
@@ -31,7 +31,10 @@ window.addEventListener('keypress', e => {
             last_time = time__.getTime();
 
             timer = (last_time - first_time) / 1000;
-
+            gross_wpm = ((text.length / 5) / (timer / 60));
+            net_wpm = (((text.length / 5) - wrong) / (timer / 60));
+            net_wpm = Math.floor(net_wpm);
+            gross_wpm = Math.floor(gross_wpm);
             result__();
 
             // console.log(i);
@@ -43,6 +46,7 @@ window.addEventListener('keypress', e => {
     } else {
         if (text_area_value !== text) {
             score -= 1 / 2;
+            wrong += 1;
         }
     }
 
@@ -75,8 +79,29 @@ function result__() {
         .insert('h1')
         .text(`${score} point`)
         .parent(2)
+        .insert('div')
+        .addClass('row')
+        .insert('h4')
+        .text(`Time :`)
+        .parent()
         .insert('span')
-        .text(`time : ${timer}s`)
+        .text(`${timer}s`)
+        .parent(2)
+        .insert('div')
+        .addClass('row')
+        .insert('h4')
+        .text(`Net WPM :`)
+        .parent()
+        .insert('span')
+        .text(`${net_wpm}`)
+        .parent(2)
+        .insert('div')
+        .addClass('row')
+        .insert('h4')
+        .text(`Gross WPM :`)
+        .parent()
+        .insert('span')
+        .text(`${gross_wpm}`)
 }
 // window.onkeyup = e => {
 

@@ -98,7 +98,8 @@ body{
     height: 100%;
 }
 .popup .window .numbers{
-    
+    display: flex;
+    flex-direction: column;
 }
 .popup .window .numbers .process-container{
     display: flex;
@@ -122,7 +123,7 @@ body{
     text-wrap: nowrap;
     font-size: 22px;
 }
-.popup .window .numbers .span{
-    font-size: 22px;
-    font-weight: 700;
+.popup .window .numbers span{
+    font-size: 20px;
+    margin: 5px 0;
 }
