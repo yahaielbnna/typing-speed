@@ -105,4 +105,64 @@ function result__() {
             wrong = 0
             gm('.score-number').text(score);
         })
-}       
+}
+
+function isMobile() {
+    const regex = /Mobi|Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i;
+    return regex.test(navigator.userAgent);
+}
+
+
+if (isMobile()) {
+    gm('body')
+        .insert('div')
+        .addClass('popup')
+        .insert('div')
+        .addClass('window')
+        .width('90%')
+        .insert('div')
+        .addClass('window-body')
+        .insert('div')
+        .display('flex')
+        .justify('center')
+        .alignItems('center')
+        .insert('img')
+        .addAttr('src', 'assets/images/no.gif')
+        .width(100)
+        .parent(2)
+        .insert('h2')
+        .addClass('sorry')
+        .text('Sorry !')
+        .parent()
+        .insert('h3')
+        .text('This website can only be accessed through a desktop device.')
+        .parent()
+        .insert('div')
+        .html(`
+        <footer class="footer" style="border-top: 2px solid #0000004f;margin: 15px 0 0">
+            Made with
+            <span style="color: red; font-size: 15px">&#10084;</span> by -
+            <a target="_blank"
+                href="#"> Yahia Elbanna </a>
+            <br />
+            <div class="social-links"
+                style="margin-top: 20px;">
+                <a href="https://github.com/yahaielbnna"
+                    target="_blank">
+                    <i class="fa-brands fa-github"></i>
+                </a>
+                <a href="https://codepen.io/yahiaelbnna"
+                    target="_blank">
+                    <i class="fa-brands fa-codepen"></i>
+                </a>
+                <a href="https://www.facebook.com/yahia.elbanna.3"
+                    target="_blank">
+                    <i class="fa-brands fa-facebook"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/yahia-elbnna/"
+                    target="_blank">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </div>
+        </footer>`)
+}
